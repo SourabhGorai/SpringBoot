@@ -1,0 +1,217 @@
+.manage-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to bottom right, #d0f0c0, #b3ecff);
+  overflow: hidden;
+  padding: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+
+/* 3D Leaves Background */
+.floating-leaves {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/background/leaf1.png'), url('/assets/background/leaf2.png');
+  background-repeat: repeat;
+  background-size: 150px, 120px;
+  animation: floatLeaves 60s linear infinite;
+  z-index: -2;
+  opacity: 0.2;
+}
+
+@keyframes floatLeaves {
+  0% { background-position: 0 0, 100px 0; }
+  100% { background-position: -500px 1000px, -300px 800px; }
+}
+
+/* Floating Emojis */
+.emoji-cloud {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 1;
+  animation: floatEmojis 10s ease-in-out infinite alternate;
+}
+
+.emoji-cloud span {
+  font-size: 2rem;
+  animation: bounce 3s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes floatEmojis {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(20px); }
+}
+
+/* Full Landscape Glass Panel */
+.content {
+  width: 90%;
+  height: 90vh;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  padding: 2rem 2rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+.content h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #111;
+}
+
+.session-desc {
+  text-align: center;
+  font-style: italic;
+  color: #444;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  max-width: 600px;
+}
+
+/* Responses Window */
+.responses-list {
+  width: 100%;
+  max-width: 900px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.responses-list::-webkit-scrollbar {
+  display: none;
+}
+
+.response-card {
+  background-color: #ffffff;
+  border: 1px solid #d7f0d7;
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.response-card:hover {
+  transform: scale(1.02);
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+  color: #666;
+}
+
+.relation-tag {
+  background-color: #cce5ff;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 0.7rem;
+}
+
+.message {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #222;
+}
+
+
+.go-home-link {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  animation: floatIn 0.8s ease-out forwards;
+  
+  
+}
+
+.go-home-link:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  color: #fff;
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* relationsip box*/
+
+.relationship-stats-floating {
+  position: absolute;
+  top: 440px;
+  right: -1.5rem;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+  color: #222;
+  width: 250px;
+  z-index: 2;
+}
+
+.relationship-stats-floating h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #4a4a4a;
+}
+
+.relationship-stats-floating ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.relationship-stats-floating li {
+  margin: 4px 0;
+  color: #333;
+}

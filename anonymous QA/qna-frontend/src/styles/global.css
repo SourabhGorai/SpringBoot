@@ -1,0 +1,263 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #0e0e0e;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Full-screen animated background GIF */
+.bg-gif {
+  background: url('https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif') no-repeat center center/cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+
+/* Welcome Page Centering */
+.welcome-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Typography */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffcb05;
+  text-shadow: 2px 2px 5px #000;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Input Styles */
+input[type="text"] {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  width: 80%;
+  max-width: 400px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Styles */
+button {
+  padding: 0.75rem 1.5rem;
+  background-color: #ffcb05;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background-color: #ffc107;
+}
+
+/* Gender Selection */
+.gender-selection {
+  margin: 1rem auto;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gender-selection label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.gender-selection input[type="radio"] {
+  accent-color: #ffcb05;
+  transform: scale(1.2);
+}
+
+.gender-selection label:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Answer Section */
+.answer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+/* Animated Emojis or Icons */
+.emoji {
+  font-size: 1.8rem;
+  animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+
+input::placeholder {
+  color: #888;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* 3D Ball Background */
+.background-3d {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #1c1c1c, #0e0e0e);
+}
+
+.ball {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  background: linear-gradient(135deg, #ffcb05, #ff9500);
+  animation: floatBall 8s infinite ease-in-out;
+  opacity: 0.7;
+}
+
+.ball:nth-child(1) {
+  top: 10%;
+  left: 20%;
+  animation-delay: 0s;
+}
+.ball:nth-child(2) {
+  top: 50%;
+  left: 60%;
+  animation-delay: 1s;
+}
+.ball:nth-child(3) {
+  top: 80%;
+  left: 30%;
+  animation-delay: 2s;
+}
+.ball:nth-child(4) {
+  top: 40%;
+  left: 80%;
+  animation-delay: 3s;
+}
+.ball:nth-child(5) {
+  top: 70%;
+  left: 10%;
+  animation-delay: 4s;
+}
+
+@keyframes floatBall {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-40px) scale(1.1);
+  }
+}
+
+/* Answer Page Container */
+.answer-page-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Centered Content */
+.answer-page-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255, 203, 5, 0.3);
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Select Dropdown */
+.relation-dropdown {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin: 1rem 0;
+  background: #1a1a1a;
+  color: #ffcb05;
+  border: 2px solid #ffcb05;
+}
+
+/* Textarea */
+.response-box {
+  width: 100%;
+  height: 120px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  background-color: #222;
+  color: #fff;
+  border: 2px solid #ffcb05;
+  resize: none;
+}
+
+/* Submitted GIF */
+.response-gif {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-top: 1rem;
+  border: 3px solid #ffcb05;
+}
